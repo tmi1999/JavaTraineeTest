@@ -29,7 +29,8 @@ public class Main {
 
 		// Nhóm các sản phẩm vào một mảng.
 		Product[] products = { product1, product2, product3, product4, product5, product6 };
-		// Sắp xếp các sản phẩm trong mảng theo giá và tên sản phẩm
+		// Sắp xếp các sản phẩm trong mảng theo: `price` giảm dần, nếu giá bằng nhau thì
+		// sắp xếp theo `name` tăng dần (không phân biệt hoa thường).
 		Arrays.sort(products, Collections.reverseOrder());
 
 		// Nhập đầu vào là loại sản phẩm
@@ -40,9 +41,8 @@ public class Main {
 
 		// Kiểm tra loại sản phẩm vừa nhập có tồn tại hay không.
 		if (Category.getTagMap().containsKey(categoryTag)) {
-			// In ra màn hình tất cả các product được gắn category đã nhập và được sắp xếp
-			// theo: `price` giảm dần, nếu giá bằng nhau thì sắp xếp theo `name` tăng dần
-			// (không phân biệt hoa thường).
+			// In ra màn hình tất cả các product có categoryTag đã nhập và theo thứ tự đã
+			// được sắp xếp trước đó
 			for (Product product : products) {
 				if (product.getCategoryTag().equals(categoryTag)) {
 					System.out.println(product.getPrice() + ", " + product.getName());
